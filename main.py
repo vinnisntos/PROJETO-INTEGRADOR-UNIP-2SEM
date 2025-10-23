@@ -14,7 +14,7 @@ def ler_usuarios():
     if not os.path.exists(USUARIOS_PATH):
         return usuarios
     with open(USUARIOS_PATH, 'r', encoding='utf-8') as f:
-        linhas = f.read().strip.splitlines()
+        linhas = f.read().strip().splitlines()
     if len(linhas) <= 1:
         return usuarios
     for linha in linhas[1:]:
@@ -70,7 +70,7 @@ def cadastrar():
     }
     usuarios.append(novo)
     salvar_usuarios(usuarios)
-    print(f'Usuário {nome} cadastrado com id {novo['id']}.')
+    print(f"Usuário {nome} cadastrado com id {novo['id']}.")
 
 
 
@@ -98,11 +98,21 @@ def main():
             cadastrar()
         elif op == '2':
             usuario = login()
+
+            
+            #redirecionar conforme papel
             if usuario:
-                # Aqui da pra adicionar funcionalidades adicionais após o login
-                pass
+                if usuario['papel'] == 'solicitante':
+                    solicitante.menu_solicitante(usuario)
+                elif usuario['papel'] == 'doador':
+                    doador.menu_doador(usuario)
+                elif usuario['papel'] == 'adm':
+                    adm.menu_adm(usuario)
+
+
+        #opção de sair
         elif op == '0':
-            os.system('cls')
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("Saindo...")
             break
         else:
