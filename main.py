@@ -1,5 +1,4 @@
 # login e cadastro simples 
-
 import os
 import datetime
 
@@ -110,7 +109,7 @@ def main():
                     adm.menu_adm(usuario)
 
 
-        #opção de sair
+        #opção de sair com limpeza de tela
         elif op == '0':
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Saindo...")
