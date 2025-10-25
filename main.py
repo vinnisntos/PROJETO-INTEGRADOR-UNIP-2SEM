@@ -1,7 +1,9 @@
 # login e cadastro simples 
 import os
 import datetime
-
+import crud.adm as adm
+import crud.doador as doador
+import crud.solicitante as solicitante
 
 #definir caminho do arquivo de usuarios
 USUARIOS_PATH = os.path.join('arquivos', 'usuarios.txt')
