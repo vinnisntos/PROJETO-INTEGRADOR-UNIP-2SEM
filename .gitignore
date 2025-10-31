@@ -1,0 +1,28 @@
+# .gitignore file
+# ignore _pycache__ directories
+
+__pycache__/
+
+# ignore .pyc files
+*.pyc
+# ignore .pyo files
+*.pyo
+# ignore .pyd files
+*.pyd
+# ignore .pdb files
+*.pdb
+# ignore .egg-info directories
+*.egg-info/
+# ignore build directories
+build/
+dist/
+# ignore virtual environment directories
+venv/
+env/
+# ignore IDE specific files
+.vscode/
+.idea/
+# ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# ignore log files
+*.log

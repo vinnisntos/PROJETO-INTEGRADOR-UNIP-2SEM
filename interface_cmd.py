@@ -66,7 +66,7 @@ def visualizar_detalhes_solicitacao(solicitacao_id: int):
         for item in solicitacao.itens:
             print(str(item))
     else:
-        print("  (Nenhum item listado)")
+        print("  (Nenhum item listado!)")
     print("=" * 40)
 
 def nova_solicitacao():
